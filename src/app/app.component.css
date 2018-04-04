@@ -1,3 +1,7 @@
 .container {
   margin-top: 50px;
 }
+
+.btn-primary {
+    min-width: 120px;
+}
