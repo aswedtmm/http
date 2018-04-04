@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-// import 'rxjs/RX';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ServerService{
   constructor(private http:Http){}
-  
+
     storeServers(setData){
         const myHeaders = new Headers({'Content-Type': 'application/json'});
         return this.http.post('http://localhost:8888/AngularJS/servers/action.php', setData,
