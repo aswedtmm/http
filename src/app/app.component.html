@@ -2,25 +2,55 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <h1>{{ appName | async }}</h1>
-      <form #serverName="ngForm" (ngSubmit)="onSubmit(serverName)">
-      <br><br>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Server Name</span>
-          </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text" placeholder="Server Name" [(ngModel)]="serverNameProp" name="name">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Capacity</span>
-          </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text" placeholder="Capacity" [(ngModel)]="capacityProp" name="capacity">
+
+    <form class="form-horizontal" #serverName="ngForm" (ngSubmit)="onSubmit(serverName)">
+
+        <div class="form-group">
+
+            <label for="inputEmail" class="control-label col-xs-2">Server Name</label>
+
+            <div class="col-xs-10">
+
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text" placeholder="Enter Server Name" [(ngModel)]="serverNameProp" name="name">
+
+            </div>
+
         </div>
-      <br><br>
-      <button class="btn btn-primary" type="submit">Add Server</button>
-      </form>
-      <br>
-        <button class="btn btn-primary" (click)="onGet()">Get Servers</button>
+
+        <div class="form-group">
+
+            <label for="inputPassword" class="control-label col-xs-2">Add Server</label>
+
+            <div class="col-xs-10">
+
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text" placeholder="Enter Capacity" [(ngModel)]="capacityProp" name="capacity">
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-xs-offset-2 col-xs-10">
+
+            <button class="btn btn-primary" type="submit">Add Server</button>
+
+            </div>
+
+        </div>
+
+    </form>
+    <form class="form-horizontal">
+        <div class="form-group">
+
+            <div class="col-xs-offset-2 col-xs-10">
+
+              <button class="btn btn-primary" (click)="onGet()">Get Servers</button>
+
+            </div>
+
+        </div>
+    </form>
       <hr>
       <ul class="list-group" *ngFor="let server of servers">
         <li class="list-group-item">{{ server.name }} (ID: {{ server.id }}) | Capacity: {{server.capacity}}</li>

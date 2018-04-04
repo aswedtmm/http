@@ -14,8 +14,6 @@ export class AppComponent {
   constructor(private serverService: ServerService){}
 
   servers:any[] = [];
-  // appName = this.serverService.getAppName();
-
 
   serverNameProp:string;
   capacityProp:number;
@@ -33,8 +31,6 @@ export class AppComponent {
 
 
   onSubmit(form: NgForm) {
-    // console.log(form.value);
-    // if (form.valid) {
 
       this.arr=[];
       this.arr.push(form.value);
@@ -47,20 +43,7 @@ export class AppComponent {
         (error) => console.log(error)
       );
 
-    // }
   }
-
-  // onAddServer(name: string) {
-  //   this.servers.push({
-  //     name: name,
-  //     capacity: 50,
-  //   });
-  //   this.serverService.storeServers(this.servers.slice(-1)) // slice(-1) --> not adding [0] since the data needs to be in array for PHP
-  //   .subscribe(
-  //     (response) => console.log(response),
-  //     (error) => console.log(error)
-  //   );
-  // }
 
     private generateId() {
       return Math.round(Math.random() * 10000);
